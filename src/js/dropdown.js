@@ -105,12 +105,10 @@
 			updateOption(originalIndex, data);
 		}
 
-		/*
-		// Scroller support
-		if ($.fn.scroller !== undefined) {
-			data.$wrapper.scroller();
+		// Scrollbar support
+		if ($.fn.scrollbar !== undefined) {
+			data.$wrapper.scrollbar();
 		}
-		*/
 
 		// Bind events
 		data.$selected.touch({
@@ -148,11 +146,9 @@
 		}
 
 		// Scrollbar support
-		/*
-		if ($.fn.scroller !== undefined) {
-			data.$dropdown.find(".selecter-options").scroller("destroy");
+		if ($.fn.scrollbar !== undefined) {
+			data.$wrapper.scrollbar("destroy");
 		}
-		*/
 
 		data.$el[0].tabIndex = data.tabIndex;
 
@@ -637,14 +633,12 @@
 		var $selected = data.$items.eq(data.index),
 			selectedOffset = (data.index >= 0 && !$selected.hasClass(Classes.item_placeholder)) ? $selected.position() : { left: 0, top: 0 };
 
-		/*
-		if ($.fn.scroller !== undefined) {
-			data.$wrapper.scroller("scroll", (data.$wrapper.find(".scroller-content").scrollTop() + selectedOffset.top), 0)
-							  .scroller("reset");
+		if ($.fn.scrollbar !== undefined) {
+			data.$wrapper.scrollbar("scroll", (data.$wrapper.find(".fs-scrollbar-content").scrollTop() + selectedOffset.top), 0)
+				.scrollbar("reset");
 		} else {
-		*/
 			data.$wrapper.scrollTop( data.$wrapper.scrollTop() + selectedOffset.top );
-		// }
+		}
 	}
 
 	/**

@@ -1,4 +1,4 @@
-/*! Formstone v0.5.1 [dropdown.css] 2015-04-13 | MIT License | formstone.it */
+/*! formstone v0.5.2 [dropdown.css] 2015-04-14 | MIT License | formstone.it */
 
 /**
 	 * @class
@@ -83,17 +83,6 @@
 		 * @type element
 		 * @description Option item
 		 */
-  /*
-		&-options.fs-scrollbar {
-			overflow: hidden;
-		}
-
-		&-options.fs-scrollbar-content {
-			max-height: @fs-dropdown-max-height;
-
-			padding: 0;
-		}
-*/
 }
 .fs-dropdown:focus {
   box-shadow: none;
@@ -189,6 +178,19 @@
 }
 .fs-dropdown-options.fs-scrollbar {
   position: absolute;
+}
+.fs-dropdown-options.fs-scrollbar .fs-scrollbar-bar {
+  height: auto;
+  border-color: #cccccc;
+  border-radius: 0 3px 3px 0;
+  border-width: 1px;
+}
+.fs-dropdown-options.fs-scrollbar .fs-scrollbar-content {
+  max-height: 260px;
+}
+.fs-dropdown-options.fs-scrollbar-setup .fs-scrollbar-content,
+.fs-dropdown-options.fs-scrollbar-active .fs-scrollbar-content {
+  padding: 0;
 }
 .no-opacity .fs-dropdown-options {
   width: auto;
